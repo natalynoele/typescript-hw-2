@@ -3,12 +3,21 @@
   і повертає boolean значення, що вказує, чи це день робочий чи вихідний.
 */
 
-enum WeekDays {
-  mon = "Monday",
-  tue = "Tuesday",
-  wed = "Wednesday",
-  thu = "Thursday",
-  fri = "Friday",
-  sat = "Saturday",
-  sun = "Sunday",
+enum Days {
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday,
 }
+
+type WeekDays = keyof typeof Days;
+
+function isWeekend(key: WeekDays) {
+  const day = Days[key];
+  return day <= Days.Friday ? true : false;
+}
+
+isWeekend("Friday");
