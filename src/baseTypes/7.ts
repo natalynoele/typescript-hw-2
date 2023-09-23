@@ -3,7 +3,7 @@
   і повертає boolean значення, що вказує, чи це день робочий чи вихідний.
 */
 
-enum Days {
+enum DayOfWeek {
   Monday,
   Tuesday,
   Wednesday,
@@ -13,11 +13,11 @@ enum Days {
   Sunday,
 }
 
-type WeekDays = keyof typeof Days;
+type WeekDays = keyof typeof DayOfWeek;
 
-function isWeekend(key: WeekDays) {
-  const day = Days[key];
-  return day <= Days.Friday ? true : false;
+function isWeekend(key: WeekDays): boolean {
+  const day = DayOfWeek[key];
+  return day <= DayOfWeek.Saturday ? false : true;
 }
 
-isWeekend("Friday");
+isWeekend("Sunday");

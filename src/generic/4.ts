@@ -2,16 +2,16 @@
   Використовуйте generics та інтерфейси, щоб виправити помилку в наступних класах:
 */
 
-interface T {
+interface IProps {
   title: string;
 }
 
-class Component {
-  constructor(public props: T) {}
+class Component<IProps> {
+  constructor(public props: IProps) {}
 }
 
-class Page extends Component {
-  pageInfo() {
+class Page extends Component<IProps> {
+  pageInfo(): void {
     console.log(this.props.title);
   }
 }

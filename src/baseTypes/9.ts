@@ -10,7 +10,7 @@ type PageInfo = {
   title: string;
   likes: number;
   accounts: string[];
-  status: Status;
+  status: "open" | "close";
   details?: {
     createdAt: Date;
     updatedAt: Date;
@@ -20,7 +20,7 @@ const page1: PageInfo = {
   title: "The awesome page",
   likes: 100,
   accounts: ["Max", "Anton", "Nikita"],
-  status: Status.open,
+  status: "open",
   details: {
     createdAt: new Date("2021-01-01"),
     updatedAt: new Date("2021-05-01"),
@@ -31,7 +31,7 @@ const page2: PageInfo = {
   title: "Python or Js",
   likes: 5,
   accounts: ["Alex"],
-  status: Status.close,
+  status: "close",
 };
 
 export {};
