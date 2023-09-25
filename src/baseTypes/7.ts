@@ -15,9 +15,7 @@ enum DayOfWeek {
 
 type WeekDays = keyof typeof DayOfWeek;
 
-function isWeekend(key: WeekDays): boolean {
-  const day = DayOfWeek[key];
-  return day <= DayOfWeek.Saturday ? false : true;
+function isWeekend(key: DayOfWeek): boolean {
+  return key === DayOfWeek.Saturday || key === DayOfWeek.Sunday;
 }
-
-isWeekend("Sunday");
+isWeekend(DayOfWeek.Saturday);
